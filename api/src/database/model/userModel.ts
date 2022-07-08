@@ -1,5 +1,5 @@
 // eslint-disable-next-line import/no-unresolved, linebreak-style
-import { DataTypes } from 'sequelize/types';
+import { DataTypes } from 'sequelize';
 import connection from '../db';
 
 export const UserModel = connection.define('user', {
@@ -7,6 +7,7 @@ export const UserModel = connection.define('user', {
   Id: {
     type: DataTypes.INTEGER,
     autoIncrement: true,
+    allowNull: false,
     primaryKey: true,
   },
   Email: {
