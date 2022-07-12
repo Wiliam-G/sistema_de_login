@@ -12,6 +12,7 @@ export const UserModel = connection.define('user', {
   },
   Email: {
     type: DataTypes.STRING,
+    unique: true,
     allowNull: false,
   },
   Password: {
