@@ -19,7 +19,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(router);
 
-app.listen(3000, async () => {
+app.listen(4000, async () => {
   await connection.sync();
   console.log('rodando na porta 3000');
 });
