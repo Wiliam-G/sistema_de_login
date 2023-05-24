@@ -1,5 +1,4 @@
 const User = require('../models/Users');
-const auth = require('./auth');
 const bcrypt = require('bcrypt');
 
 module.exports = {
@@ -8,11 +7,11 @@ module.exports = {
 
         // validações no registro do usuário
         if (user_name.length < 5) {
-         return res.send("O nome de usuário deve conter pelo menos 5 caracteres");
+         return res.json("O nome de usuário deve conter pelo menos 5 caracteres");
         }
 
-        if (password.length < 4 || confirmPassword.length < 4) {
-         return res.send("A senha deve conter pelo menos 4 caracteres")
+        if (password.length < 4) {
+         return res.json("A senha deve conter pelo menos 4 caracteres")
         }
 
         if (password != confirmPassword) {
@@ -22,7 +21,7 @@ module.exports = {
         // checa se já existe um usuário com o username informado
         const registeredUser = User.findOne({ where: {user_name }})
         if(registeredUser) {
-         return res.send("Usuário já existe");
+         return res.json("Usuário já existe");
         }
 
         const salt = 12;
