@@ -1,14 +1,14 @@
 import './App.css';
-
-import { Outlet } from 'react-router-dom';
+import Home from './pages/homePage';
+import { Layout } from './styled';
+import AppRoutes from './routes';
 
 
 function App() {
   return (
-    <div>
-      <h1>app</h1>
-      <Outlet />
-    </div>
+    <Layout>
+      <AppRoutes />
+    </Layout>
   );
 };
 

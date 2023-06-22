@@ -3,39 +3,39 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import './index.css';
 
-import Home from './routes/home';
-import Login from './routes/login';
-import Register from './routes/register';
+import Home from './pages/homePage';
+import Login from './pages/loginPage';
+import Register from './pages/registerPage';
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <App />,
-    children: [
-      {
-        path: '/',
-        element: <Home />,
-      },
-      {
-        path: 'login',
-        element: <Login />,
-      },
-      {
-        path: 'register',
-        element: <Register />
-      }
-    ]
-  },
-]);
+// const router = createBrowserRouter([
+//   {
+//     path: '/',
+//     element: <App />,
+//     children: [
+//       {
+//         path: '/',
+//         element: <Home />,
+//       },
+//       {
+//         path: 'login',
+//         element: <Login />,
+//       },
+//       {
+//         path: 'register',
+//         element: <Register />
+//       }
+//     ]
+//   },
+// ]);
 
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <App />
   </React.StrictMode>
 );
 
