@@ -29,6 +29,7 @@ module.exports = {
       const authHeader = req.headers['authorization'];
       const token = authHeader && authHeader.split(" ")[1]
 
+
       if(!token) {
          return res.status(401).json({ msg: "Acesso negado!" });
       }
@@ -91,7 +92,9 @@ module.exports = {
             );
 
             res.status(200).json({
-               msg: "Autenticação realizada com sucesso!", token
+               msg: "Autenticação realizada com sucesso!",
+               user_name,
+               token
             });
 
          } catch(error) {

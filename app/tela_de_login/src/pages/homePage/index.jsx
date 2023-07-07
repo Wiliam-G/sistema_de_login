@@ -15,7 +15,7 @@ const Home = () => {
             <HomePage>
                 <h1>Home</h1>
                 <AuthProvider>
-                    <p>Bem vindo</p>
+                    <p>Bem vindo {  } </p>
                 </AuthProvider>
                 <button name='register' btn='register' onClick={handleSair}>Sair</button>
             </HomePage>
